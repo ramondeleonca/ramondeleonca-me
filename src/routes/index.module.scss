@@ -1,0 +1,13 @@
+.cursor_text {
+    animation: rotate-360 3s linear infinite;
+    letter-spacing: 0.35rem;
+}
+
+@keyframes rotate-360 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
