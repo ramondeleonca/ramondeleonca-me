@@ -1,12 +1,17 @@
 import { defineConfig, splitVendorChunkPlugin } from 'vite'
 import react from '@vitejs/plugin-react'
+import media from './scripts/media.mjs'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
-    splitVendorChunkPlugin()
+    splitVendorChunkPlugin(),
+    // compress media/ into public/media/ before dev or build (cached, only changed files are re-encoded)
+    { name: 'media', buildStart: media }
   ],
+  // only the site itself; the old demos/ and prototypes/ pages are not part of it
+  optimizeDeps: { entries: ['index.html'] },
   build: {
     rollupOptions: {
       output: {

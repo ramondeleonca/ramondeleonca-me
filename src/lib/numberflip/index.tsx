@@ -1,7 +1,6 @@
-import cn from "classnames";
 import styles from "./styles.module.scss";
 
-export type NumberFlipSegmentProps = { itemArray: string[], number: number }
+export type NumberFlipSegmentProps = { itemArray: Array<string | React.ReactNode>, number: number }
 export function NumberFlipSegment(props: NumberFlipSegmentProps) {
     return (
         <div className={styles.number_container}>
@@ -13,17 +12,18 @@ export function NumberFlipSegment(props: NumberFlipSegmentProps) {
     )
 }
 
-export type NumberFlipProps = { itemArray?: string[], number: number, suffix?: string, prefix?: string } & React.HTMLAttributes<HTMLDivElement>;
-export default function NumberFlip(props: NumberFlipProps) {
-    const numbers = props.number.toString().split("").map(Number);
-    const itemArray = props.itemArray ?? ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+export type NumberFlipProps = { itemArray?: string[], number: number, suffix?: string | React.ReactNode, prefix?: string | React.ReactNode } & Omit<React.HTMLAttributes<HTMLDivElement>, "prefix">;
+// the NumberFlip-only props are pulled out so they don't land on the <div>
+export default function NumberFlip({ itemArray: items, number, suffix, prefix, className, ...props }: NumberFlipProps) {
+    const numbers = number.toString().split("").map(Number);
+    const itemArray = items ?? ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
     return (
-        <div {...props} className={cn(styles.number_flip, props.className)}>
+        <div {...props} className={[styles.number_flip, className].filter(Boolean).join(" ")}>
             {[
-                <NumberFlipSegment key={props.prefix ?? "prefix"} itemArray={[props.prefix ?? ""]} number={0}></NumberFlipSegment>,
+                <NumberFlipSegment key={(typeof prefix === "string") ? prefix : "prefix"} itemArray={[prefix ?? ""]} number={0}></NumberFlipSegment>,
                 ...numbers.map((number, index) => <NumberFlipSegment key={index} itemArray={itemArray} number={number}></NumberFlipSegment>),
-                <NumberFlipSegment key={props.suffix ?? "suffix"} itemArray={[props.suffix ?? ""]} number={0}></NumberFlipSegment>
+                <NumberFlipSegment key={(typeof suffix === "string") ? suffix : "suffix"} itemArray={[suffix ?? ""]} number={0}></NumberFlipSegment>
             ]}
         </div>
     )

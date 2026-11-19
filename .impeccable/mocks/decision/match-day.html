@@ -1,0 +1,34 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Match Day</title>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap");
+* { box-sizing: border-box; margin: 0; }
+body { width: 1440px; height: 900px; overflow: hidden; position: relative; font-family: Archivo, "Arial Narrow", sans-serif; color: #fff; background: #0a2f9c; }
+/* stands in for match video printed in one blue ink */
+.field { position: absolute; left: 520px; top: 90px; width: 1100px; height: 520px; background: #1447e6; transform: skewX(-24deg) rotate(-6deg); }
+.field::after { content: ""; position: absolute; right: 0; top: 0; bottom: 0; width: 120px; background: #e5231b; mix-blend-mode: multiply; }
+.top { position: absolute; left: 48px; right: 48px; top: 32px; display: flex; justify-content: space-between; font-size: 26px; font-weight: 700; }
+h1 { position: absolute; left: 48px; bottom: 186px; width: 1120px; font-size: 118px; line-height: .9; font-weight: 800; font-stretch: 62%; }
+.bar { position: absolute; inset: auto 0 0 0; height: 150px; display: grid; grid-template-columns: 1fr 250px 1fr; }
+.blue { background: #1447e6; display: grid; grid-template-rows: repeat(3, 1fr); }
+.blue a { display: flex; align-items: center; gap: 16px; padding: 0 48px; font-size: 24px; border-bottom: 2px solid #0a2f9c; }
+.blue b { font-stretch: 62%; font-size: 32px; min-width: 250px; }
+.clock { background: #111; text-align: center; padding-top: 10px; font-size: 22px; }
+.clock strong { display: block; font-size: 92px; line-height: 1; font-stretch: 62%; font-variant-numeric: tabular-nums; }
+.clock i { display: block; height: 8px; margin: 6px 28px 8px; background: linear-gradient(90deg, #f2b400 16%, #444 16%); }
+.red { background: #e5231b; padding: 26px 48px; font-size: 24px; }
+.red b { display: block; font-size: 52px; line-height: 1; font-stretch: 62%; margin-bottom: 8px; }
+</style>
+<div class="field"></div>
+<div class="top"><span>Ramón de León Cabrera, Saltillo, Coahuila</span><span>Español / English</span></div>
+<h1>I build the robot, the league it plays in, and the site that announces it.</h1>
+<div class="bar">
+  <div class="blue">
+    <a><b>MechaLeague</b> founder and project lead, 2024 to now</a>
+    <a><b>3526 Blue Ignition</b> software lead, now mentor</a>
+    <a><b>Soul of Mexico</b> bilingual site for a Calgary non-profit</a>
+  </div>
+  <div class="clock"><strong>2:30</strong><i></i>Profile, 1 of 6</div>
+  <div class="red"><b>Write to Ramón</b>ramondeleonca@gmail.com</div>
+</div>

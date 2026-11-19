@@ -1,4 +1,4 @@
-@use "./../../../node_modules/easings.scss/" as *;
+$ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1); // was imported from easings.scss
 
 .number_flip {
     display: flex;

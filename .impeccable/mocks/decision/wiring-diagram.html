@@ -1,0 +1,42 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Wiring Diagram</title>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Chivo:wght@400;700;900&display=swap");
+* { box-sizing: border-box; margin: 0; }
+body { width: 1440px; height: 900px; overflow: hidden; font-family: Chivo, "Helvetica Neue", sans-serif; color: #111; background: #f1f3ef; }
+svg { width: 1440px; height: 900px; }
+text { font: 700 24px Chivo, sans-serif; fill: #111; }
+.h { font-weight: 900; font-size: 62px; }
+.w { fill: #fff; }
+.dev { fill: #fff; stroke: #111; stroke-width: 5; }
+.wire { fill: none; stroke-width: 9; }
+</style>
+<svg viewBox="0 0 1440 900">
+  <text class="h" x="48" y="100">Ramón de León Cabrera</text>
+  <text x="48" y="146">One system: robots on the yellow and green bus, websites on the blue line.</text>
+  <text x="1210" y="60">Español / English</text>
+
+  <!-- power: education -->
+  <path class="wire" stroke="#e02020" d="M250 660V560H560V470"/>
+  <path class="wire" stroke="#111" d="M290 660V590H600V470"/>
+  <!-- CAN pair: robotics, daisy-chained in date order -->
+  <path class="wire" stroke="#ffd400" d="M700 380H860V250H1000M1250 250H1330V470H1250M1000 470H860V640H1000"/>
+  <path class="wire" stroke="#1fa64a" d="M700 400H880V270H1000M1250 270H1310V450H1250M1000 490H880V660H1000"/>
+  <!-- ethernet: web -->
+  <path class="wire" stroke="#1f6fe0" d="M460 390H360V300M360 230V200H130V300M130 370V480H300"/>
+
+  <rect x="460" y="320" width="240" height="150" fill="#111"/>
+  <text class="w" x="484" y="376">Ramón</text>
+  <text class="w" x="484" y="412">robotics and web</text>
+
+  <rect class="dev" x="1000" y="210" width="250" height="100"/><text x="1020" y="252">Blue Ignition 3526</text><text x="1020" y="286">software lead, 2022</text>
+  <rect class="dev" x="1000" y="420" width="250" height="100"/><text x="1020" y="462">MechaLeague</text><text x="1020" y="496">founder, 2024</text>
+  <rect class="dev" x="1000" y="610" width="250" height="100"/><text x="1020" y="652">Blue Ignition 3526</text><text x="1020" y="686">mentor, 2025</text>
+
+  <rect class="dev" x="250" y="230" width="220" height="70"/><text x="270" y="274">Soul of Mexico</text>
+  <rect class="dev" x="40" y="300" width="180" height="70"/><text x="60" y="344">Ana Martín</text>
+  <rect class="dev" x="300" y="440" width="140" height="70" style="fill:#1f6fe0"/><text class="w" x="322" y="484">Contact</text>
+
+  <rect class="dev" x="170" y="660" width="330" height="110"/><text x="190" y="706">Tec de Monterrey, Saltillo</text><text x="190" y="742">Robotics engineering, 2025 to 2029</text>
+</svg>
