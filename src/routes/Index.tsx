@@ -26,7 +26,7 @@ export default function Index() {
     // smooth scroll: sideways on desktop, down on mobile; the page leans with scroll speed
     useEffect(() => {
         document.documentElement.classList.toggle("horizontal", horizontal);
-        const l = new Lenis({ orientation: horizontal ? "horizontal" : "vertical", gestureOrientation: "both", syncTouch: true, lerp: 0.1 });
+        const l = new Lenis({ orientation: horizontal ? "horizontal" : "vertical", gestureOrientation: "both", lerp: 0.1 });
         lenis.current = l;
         const skew = horizontal ? "skewX" : "skewY", max = horizontal ? 6 : 1.5;
         l.on("scroll", ({ scroll, velocity, progress }: Lenis) => {
