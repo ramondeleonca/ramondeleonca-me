@@ -31,6 +31,8 @@ export default function Nav({ lang, setLang, lenis, revealed }: Props) {
 
     const go = (id?: string) => {
         setOpen(false);
+        // the open drawer stopped Lenis, and a stopped Lenis ignores scrollTo
+        lenis.current?.start();
         lenis.current?.scrollTo(id ? (document.querySelector(`[data-nav="${id}"]`) as HTMLElement) : 0, { duration: 1.4 });
     };
 
